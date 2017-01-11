@@ -30,4 +30,5 @@ def scrape_list(url)
   end
 end
 
+ScraperWiki.sqliteexecute('DELETE FROM data') rescue nil
 Dir['cache/*.html'].each { |f| scrape_list(f) }
